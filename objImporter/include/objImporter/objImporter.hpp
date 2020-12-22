@@ -15,6 +15,15 @@ public:
     void getVertices(string line, double* vertices);
     void getNormals(string line, double* normals);
     void getTxtCoords(string line, double* txtCoords);
+    void getOrder(string line, int* order);
+    vector<float> getData();
+    int getDataSize();
+
+private:
+    vector<double*> Vertices;
+    vector<double*> Normals; 
+    vector<double*> TxtCoords;
+    vector<float> Data;
 };
 
 #endif 

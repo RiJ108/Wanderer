@@ -21,6 +21,7 @@ enable_testing()
 add_executable(Wanderer main.cpp)
 
 add_subdirectory("objImporter")
+add_subdirectory("shader")
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
@@ -32,4 +33,5 @@ target_link_libraries(
     libgdi32.a
     glad
     objImporter
+    shader
     )

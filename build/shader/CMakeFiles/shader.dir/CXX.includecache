@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../shader/include/shader/shader.hpp
+glad/glad.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+glm/gtx/vector_angle.hpp
+-
+string
+-
+fstream
+-
+sstream
+-
+iostream
+-
+cstdlib
+-
+vector
+-
+
+D:/UserData/Documents/vscode-workspace/Wanderer/shader/src/shader/shader.cpp
+shader/shader.hpp
+D:/UserData/Documents/vscode-workspace/Wanderer/shader/src/shader/shader/shader.hpp
+

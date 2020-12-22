@@ -3,4 +3,5 @@
 
 CMakeFiles/Wanderer.dir/main.cpp.obj
  ../objImporter/include/objImporter/objImporter.hpp
+ ../shader/include/shader/shader.hpp
  D:/UserData/Documents/vscode-workspace/Wanderer/main.cpp

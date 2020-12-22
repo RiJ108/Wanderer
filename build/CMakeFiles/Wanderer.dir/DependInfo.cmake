@@ -12,12 +12,15 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../objImporter/include"
   "objImporter"
+  "../shader/include"
+  "shader"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "D:/UserData/Documents/vscode-workspace/Wanderer/build/CMakeFiles/glad.dir/DependInfo.cmake"
   "D:/UserData/Documents/vscode-workspace/Wanderer/build/objImporter/CMakeFiles/objImporter.dir/DependInfo.cmake"
+  "D:/UserData/Documents/vscode-workspace/Wanderer/build/shader/CMakeFiles/shader.dir/DependInfo.cmake"
+  "D:/UserData/Documents/vscode-workspace/Wanderer/build/CMakeFiles/glad.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

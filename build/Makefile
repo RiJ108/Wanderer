@@ -610,6 +610,19 @@ objImporter/fast:
 	$(MAKE) $(MAKESILENT) -f objImporter\CMakeFiles\objImporter.dir\build.make objImporter/CMakeFiles/objImporter.dir/build
 .PHONY : objImporter/fast
 
+#=============================================================================
+# Target rules for targets named shader
+
+# Build rule for target.
+shader: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 shader
+.PHONY : shader
+
+# fast build rule for target.
+shader/fast:
+	$(MAKE) $(MAKESILENT) -f shader\CMakeFiles\shader.dir\build.make shader/CMakeFiles/shader.dir/build
+.PHONY : shader/fast
+
 lib/glad/glad.obj: lib/glad/glad.c.obj
 
 .PHONY : lib/glad/glad.obj
@@ -710,6 +723,7 @@ help:
 	@echo ... Wanderer
 	@echo ... glad
 	@echo ... objImporter
+	@echo ... shader
 	@echo ... lib/glad/glad.obj
 	@echo ... lib/glad/glad.i
 	@echo ... lib/glad/glad.s

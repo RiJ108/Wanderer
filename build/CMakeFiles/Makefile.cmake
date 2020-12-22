@@ -53,6 +53,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../objImporter/include/objImporter/CMakeLists.txt"
   "../objImporter/src/CMakeLists.txt"
   "../objImporter/src/objImporter/CMakeLists.txt"
+  "../shader/CMakeLists.txt"
+  "../shader/include/CMakeLists.txt"
+  "../shader/include/shader/CMakeLists.txt"
+  "../shader/src/CMakeLists.txt"
+  "../shader/src/shader/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -73,6 +78,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "objImporter/include/objImporter/CMakeFiles/CMakeDirectoryInformation.cmake"
   "objImporter/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "objImporter/src/objImporter/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "shader/shader_export.h"
+  "shader/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "shader/include/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "shader/include/shader/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "shader/src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "shader/src/shader/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -108,4 +119,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ContinuousCoverage.dir/DependInfo.cmake"
   "CMakeFiles/Wanderer.dir/DependInfo.cmake"
   "objImporter/CMakeFiles/objImporter.dir/DependInfo.cmake"
+  "shader/CMakeFiles/shader.dir/DependInfo.cmake"
   )

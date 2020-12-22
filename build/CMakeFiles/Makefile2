@@ -74,11 +74,13 @@ CMAKE_BINARY_DIR = D:\UserData\Documents\vscode-workspace\Wanderer\build
 all: CMakeFiles/glad.dir/all
 all: CMakeFiles/Wanderer.dir/all
 all: objImporter/all
+all: shader/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: objImporter/preinstall
+preinstall: shader/preinstall
 
 .PHONY : preinstall
 
@@ -114,6 +116,7 @@ clean: CMakeFiles/ContinuousTest.dir/clean
 clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/Wanderer.dir/clean
 clean: objImporter/clean
+clean: shader/clean
 
 .PHONY : clean
 
@@ -211,6 +214,101 @@ objImporter/src/objImporter/preinstall:
 objImporter/src/objImporter/clean:
 
 .PHONY : objImporter/src/objImporter/clean
+
+#=============================================================================
+# Directory level rules for directory shader
+
+# Recursive "all" directory target.
+shader/all: shader/CMakeFiles/shader.dir/all
+shader/all: shader/include/all
+shader/all: shader/src/all
+
+.PHONY : shader/all
+
+# Recursive "preinstall" directory target.
+shader/preinstall: shader/include/preinstall
+shader/preinstall: shader/src/preinstall
+
+.PHONY : shader/preinstall
+
+# Recursive "clean" directory target.
+shader/clean: shader/CMakeFiles/shader.dir/clean
+shader/clean: shader/include/clean
+shader/clean: shader/src/clean
+
+.PHONY : shader/clean
+
+#=============================================================================
+# Directory level rules for directory shader/include
+
+# Recursive "all" directory target.
+shader/include/all: shader/include/shader/all
+
+.PHONY : shader/include/all
+
+# Recursive "preinstall" directory target.
+shader/include/preinstall: shader/include/shader/preinstall
+
+.PHONY : shader/include/preinstall
+
+# Recursive "clean" directory target.
+shader/include/clean: shader/include/shader/clean
+
+.PHONY : shader/include/clean
+
+#=============================================================================
+# Directory level rules for directory shader/include/shader
+
+# Recursive "all" directory target.
+shader/include/shader/all:
+
+.PHONY : shader/include/shader/all
+
+# Recursive "preinstall" directory target.
+shader/include/shader/preinstall:
+
+.PHONY : shader/include/shader/preinstall
+
+# Recursive "clean" directory target.
+shader/include/shader/clean:
+
+.PHONY : shader/include/shader/clean
+
+#=============================================================================
+# Directory level rules for directory shader/src
+
+# Recursive "all" directory target.
+shader/src/all: shader/src/shader/all
+
+.PHONY : shader/src/all
+
+# Recursive "preinstall" directory target.
+shader/src/preinstall: shader/src/shader/preinstall
+
+.PHONY : shader/src/preinstall
+
+# Recursive "clean" directory target.
+shader/src/clean: shader/src/shader/clean
+
+.PHONY : shader/src/clean
+
+#=============================================================================
+# Directory level rules for directory shader/src/shader
+
+# Recursive "all" directory target.
+shader/src/shader/all:
+
+.PHONY : shader/src/shader/all
+
+# Recursive "preinstall" directory target.
+shader/src/shader/preinstall:
+
+.PHONY : shader/src/shader/preinstall
+
+# Recursive "clean" directory target.
+shader/src/shader/clean:
+
+.PHONY : shader/src/shader/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/NightlyUpdate.dir
@@ -1001,6 +1099,7 @@ CMakeFiles/ContinuousCoverage.dir/clean:
 # All Build rule for target.
 CMakeFiles/Wanderer.dir/all: CMakeFiles/glad.dir/all
 CMakeFiles/Wanderer.dir/all: objImporter/CMakeFiles/objImporter.dir/all
+CMakeFiles/Wanderer.dir/all: shader/CMakeFiles/shader.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Wanderer.dir\build.make CMakeFiles/Wanderer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Wanderer.dir\build.make CMakeFiles/Wanderer.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\UserData\Documents\vscode-workspace\Wanderer\build\CMakeFiles --progress-num=1,2 "Built target Wanderer"
@@ -1008,7 +1107,7 @@ CMakeFiles/Wanderer.dir/all: objImporter/CMakeFiles/objImporter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Wanderer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\UserData\Documents\vscode-workspace\Wanderer\build\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\UserData\Documents\vscode-workspace\Wanderer\build\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Wanderer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\UserData\Documents\vscode-workspace\Wanderer\build\CMakeFiles 0
 .PHONY : CMakeFiles/Wanderer.dir/rule
@@ -1049,6 +1148,33 @@ objImporter: objImporter/CMakeFiles/objImporter.dir/rule
 objImporter/CMakeFiles/objImporter.dir/clean:
 	$(MAKE) $(MAKESILENT) -f objImporter\CMakeFiles\objImporter.dir\build.make objImporter/CMakeFiles/objImporter.dir/clean
 .PHONY : objImporter/CMakeFiles/objImporter.dir/clean
+
+#=============================================================================
+# Target rules for target shader/CMakeFiles/shader.dir
+
+# All Build rule for target.
+shader/CMakeFiles/shader.dir/all: CMakeFiles/glad.dir/all
+	$(MAKE) $(MAKESILENT) -f shader\CMakeFiles\shader.dir\build.make shader/CMakeFiles/shader.dir/depend
+	$(MAKE) $(MAKESILENT) -f shader\CMakeFiles\shader.dir\build.make shader/CMakeFiles/shader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\UserData\Documents\vscode-workspace\Wanderer\build\CMakeFiles --progress-num=7,8 "Built target shader"
+.PHONY : shader/CMakeFiles/shader.dir/all
+
+# Build rule for subdir invocation for target.
+shader/CMakeFiles/shader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\UserData\Documents\vscode-workspace\Wanderer\build\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 shader/CMakeFiles/shader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\UserData\Documents\vscode-workspace\Wanderer\build\CMakeFiles 0
+.PHONY : shader/CMakeFiles/shader.dir/rule
+
+# Convenience name for target.
+shader: shader/CMakeFiles/shader.dir/rule
+
+.PHONY : shader
+
+# clean rule for target.
+shader/CMakeFiles/shader.dir/clean:
+	$(MAKE) $(MAKESILENT) -f shader\CMakeFiles\shader.dir\build.make shader/CMakeFiles/shader.dir/clean
+.PHONY : shader/CMakeFiles/shader.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

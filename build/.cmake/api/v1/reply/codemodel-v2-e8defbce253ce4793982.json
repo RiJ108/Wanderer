@@ -8,7 +8,8 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						6
 					],
 					"hasInstallRule" : true,
 					"minimumCMakeVersion" : 
@@ -122,6 +123,78 @@
 					"parentIndex" : 4,
 					"projectIndex" : 0,
 					"source" : "objImporter/src/objImporter"
+				},
+				{
+					"build" : "shader",
+					"childIndexes" : 
+					[
+						7,
+						9
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "shader",
+					"targetIndexes" : 
+					[
+						31
+					]
+				},
+				{
+					"build" : "shader/include",
+					"childIndexes" : 
+					[
+						8
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18.0"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "shader/include"
+				},
+				{
+					"build" : "shader/include/shader",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18.0"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 0,
+					"source" : "shader/include/shader"
+				},
+				{
+					"build" : "shader/src",
+					"childIndexes" : 
+					[
+						10
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18.0"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "shader/src"
+				},
+				{
+					"build" : "shader/src/shader",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18.0"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 0,
+					"source" : "shader/src/shader"
 				}
 			],
 			"name" : "Debug",
@@ -135,7 +208,12 @@
 						2,
 						3,
 						4,
-						5
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
 					],
 					"name" : "Wanderer",
 					"targetIndexes" : 
@@ -170,7 +248,8 @@
 						27,
 						28,
 						29,
-						30
+						30,
+						31
 					]
 				}
 			],
@@ -375,7 +454,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Wanderer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Wanderer-Debug-69651915e560be38a4f3.json",
+					"jsonFile" : "target-Wanderer-Debug-38bad33eca2a792d2143.json",
 					"name" : "Wanderer",
 					"projectIndex" : 0
 				},
@@ -391,6 +470,13 @@
 					"id" : "objImporter::@3aa0d8ba885553ea915b",
 					"jsonFile" : "target-objImporter-Debug-3f733e7a1a8a3aeb3bdb.json",
 					"name" : "objImporter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "shader::@2bbbf1053401b8be33b8",
+					"jsonFile" : "target-shader-Debug-5c91327238891dcdf965.json",
+					"name" : "shader",
 					"projectIndex" : 0
 				}
 			]

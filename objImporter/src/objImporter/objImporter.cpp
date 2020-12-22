@@ -2,7 +2,9 @@
 
 ObjImporter::ObjImporter(){
     cout << "OBJIMPORTER::ObjImporter()" << endl;
-    fstream file;
+    /*std::string path = "./resources";
+    for (const auto & entry : fs::directory_iterator(path))
+        std::cout << entry.path() << std::endl;*/
     /*std::string path = "./resources/object";
     for (const auto & entry : fs::directory_iterator(path)){
         std::cout << entry.path() << std::endl;
@@ -14,6 +16,7 @@ ObjImporter::ObjImporter(){
 }
 
 void ObjImporter::extract(string path){
+    //**Function that read the file and direct what to do with them
     fstream file;
     file.open(path);
     if(file.is_open()) cout << "File "+path+" openned." << endl;
@@ -24,9 +27,12 @@ void ObjImporter::extract(string path){
     string name;
     stringstream ss;
 
-    double coords[3], norm[3], txtCoords[2];
+    double *coords, *norms, *txtCoords;
+    int *order;
 
+    //**Main loop which get each line of the obj file
     while(getline(file, line)){
+        //**Test to determine what the current line is coding for
         switch(line.at(0)){
             case 'o':
                 ss << line;
@@ -37,28 +43,39 @@ void ObjImporter::extract(string path){
             case 'v':
                 switch(line.at(1)){
                     case ' ':
-                        getVertices(line, &coords[0]);
+                        coords = (double*)malloc(sizeof(double)*3);
+                        getVertices(line, coords);
+                        Vertices.push_back(coords);
                         break;
 
                     case 't':
-                        getTxtCoords(line, &txtCoords[0]);
+                        txtCoords = (double*)malloc(sizeof(double)*2);
+                        getTxtCoords(line, txtCoords);
+                        TxtCoords.push_back(txtCoords);
                         break;
                     
                     case 'n':
-                        getNormals(line, &norm[0]);
+                        norms = (double*)malloc(sizeof(double)*3);
+                        getNormals(line, norms);
+                        Normals.push_back(norms);
                         break;
                 }
                 break;
 
             case 'f':
-                cout << line << endl;
+                order = (int*)malloc(sizeof(int)*3);
+                getOrder(line, order);
+                break;
         }
     }
 
+    //**Simple debug prompt of the Data vector
+    cout << "Data size = " << Data.size() << endl;
     file.close();
 }
 
 void ObjImporter::getVertices(string line, double* vertices){
+    //Cheap and dirty way of retriving the double for the coordinates form a string
     char c;
     string tmp;
     int index = 2;
@@ -81,6 +98,7 @@ void ObjImporter::getVertices(string line, double* vertices){
 }
 
 void ObjImporter::getNormals(string line, double* normals){
+    //Cheap and dirty way of retriving the double for the normals form a string
     char c;
     string tmp;
     int index = 3;
@@ -103,6 +121,7 @@ void ObjImporter::getNormals(string line, double* normals){
 }
 
 void ObjImporter::getTxtCoords(string line, double* txtCoords){
+    //Cheap and dirty way of retriving the double for the textures coordinates form a string
     char c;
     string tmp;
     int index = 3;
@@ -119,4 +138,47 @@ void ObjImporter::getTxtCoords(string line, double* txtCoords){
     }
     txtCoords[1] = stod(tmp);
     cout << "TxtCoords x: " << txtCoords[0] << " y: " << txtCoords[1] << endl;
+}
+
+void ObjImporter::getOrder(string line, int* order){
+    //**Function which get the reference of coordinates, textures coordinates
+    //**and normals for the vertices by group of three is provided by the obj file
+    //**and stack the data in the Data vector
+    stringstream ss;
+    ss << line;
+    int x0, y0, z0, x1, y1, z1, x2, y2, z2, i;
+    string tmp;
+    char c;
+
+    //**Exctraction of the indices for coordinates, textures coordinates
+    //**and normals for the three vertices of the triangle
+    ss >> tmp >> x0 >> c >> y0 >> c >> z0 >> x1 >> c >> y1 >> c >> z1 >> x2 >> c >> y2 >> c >> z2;
+
+    
+    //**Storing of datas for the first vertex
+    //**TxtCoords temporaly ignored (indexted by y)
+    for(i = 0 ; i < 3 ; i++)//Coordinates loop
+        Data.push_back(Vertices.at(x0-1)[i]);
+    for(i = 0 ; i < 3 ; i++)//Normals loop
+        Data.push_back(Normals.at(z0-1)[i]);
+
+    //**Storing of datas for the second vertex
+    for(i = 0 ; i < 3 ; i++)//Coordinates loop
+        Data.push_back(Vertices.at(x1-1)[i]);
+    for(i = 0 ; i < 3 ; i++)//Normals loop
+        Data.push_back(Normals.at(z1-1)[i]);
+
+    //**Storing of datas for the third vertex
+    for(i = 0 ; i < 3 ; i++)//Coordinates loop
+        Data.push_back(Vertices.at(x2-1)[i]);
+    for(i = 0 ; i < 3 ; i++)//Normals loop
+        Data.push_back(Normals.at(z2-1)[i]);
+}
+
+vector<float> ObjImporter::getData(){
+    return Data;
+}
+
+int ObjImporter::getDataSize(){
+    return Data.size();
 }

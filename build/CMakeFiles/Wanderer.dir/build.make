@@ -98,8 +98,9 @@ Wanderer_EXTERNAL_OBJECTS =
 
 bin/Wanderer.exe: CMakeFiles/Wanderer.dir/main.cpp.obj
 bin/Wanderer.exe: CMakeFiles/Wanderer.dir/build.make
-bin/Wanderer.exe: lib/libglad.dll.a
 bin/Wanderer.exe: lib/libobjImporter-d.dll.a
+bin/Wanderer.exe: lib/libshader-d.dll.a
+bin/Wanderer.exe: lib/libglad.dll.a
 bin/Wanderer.exe: CMakeFiles/Wanderer.dir/linklibs.rsp
 bin/Wanderer.exe: CMakeFiles/Wanderer.dir/objects1.rsp
 bin/Wanderer.exe: CMakeFiles/Wanderer.dir/link.txt

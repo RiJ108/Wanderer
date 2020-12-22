@@ -13,5 +13,10 @@
   "directory": "D:/UserData/Documents/vscode-workspace/Wanderer/build/objImporter",
   "command": "C:\\MinGW\\bin\\g++.exe -DobjImporter_EXPORTS @CMakeFiles/objImporter.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\objImporter.dir\\src\\objImporter\\objImporter.cpp.obj -c D:\\UserData\\Documents\\vscode-workspace\\Wanderer\\objImporter\\src\\objImporter\\objImporter.cpp",
   "file": "D:/UserData/Documents/vscode-workspace/Wanderer/objImporter/src/objImporter/objImporter.cpp"
+},
+{
+  "directory": "D:/UserData/Documents/vscode-workspace/Wanderer/build/shader",
+  "command": "C:\\MinGW\\bin\\g++.exe -Dshader_EXPORTS @CMakeFiles/shader.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\shader.dir\\src\\shader\\shader.cpp.obj -c D:\\UserData\\Documents\\vscode-workspace\\Wanderer\\shader\\src\\shader\\shader.cpp",
+  "file": "D:/UserData/Documents/vscode-workspace/Wanderer/shader/src/shader/shader.cpp"
 }
 ]

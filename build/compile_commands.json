@@ -1,0 +1,17 @@
+[
+{
+  "directory": "D:/UserData/Documents/vscode-workspace/Wanderer/build",
+  "command": "C:\\MinGW\\bin\\gcc.exe -Dglad_EXPORTS  -g -o CMakeFiles\\glad.dir\\lib\\glad\\glad.c.obj -c D:\\UserData\\Documents\\vscode-workspace\\Wanderer\\lib\\glad\\glad.c",
+  "file": "D:/UserData/Documents/vscode-workspace/Wanderer/lib/glad/glad.c"
+},
+{
+  "directory": "D:/UserData/Documents/vscode-workspace/Wanderer/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/Wanderer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Wanderer.dir\\main.cpp.obj -c D:\\UserData\\Documents\\vscode-workspace\\Wanderer\\main.cpp",
+  "file": "D:/UserData/Documents/vscode-workspace/Wanderer/main.cpp"
+},
+{
+  "directory": "D:/UserData/Documents/vscode-workspace/Wanderer/build/objImporter",
+  "command": "C:\\MinGW\\bin\\g++.exe -DobjImporter_EXPORTS @CMakeFiles/objImporter.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\objImporter.dir\\src\\objImporter\\objImporter.cpp.obj -c D:\\UserData\\Documents\\vscode-workspace\\Wanderer\\objImporter\\src\\objImporter\\objImporter.cpp",
+  "file": "D:/UserData/Documents/vscode-workspace/Wanderer/objImporter/src/objImporter/objImporter.cpp"
+}
+]

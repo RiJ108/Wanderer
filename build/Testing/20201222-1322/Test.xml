@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-mingw32-make"
+	BuildStamp="20201222-1322-Experimental"
+	Name="LICIA"
+	Generator="ctest-3.18.0"
+	CompilerName="C:/MinGW/bin/g++.exe"
+	CompilerVersion="9.2.0"
+	OSName="Windows"
+	Hostname="Licia"
+	OSRelease=" Personal"
+	OSVersion=" (Build 19042)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="14"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="6"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="17734"
+	TotalPhysicalMemory="16326"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="3600"
+	>
+	<Testing>
+		<StartDateTime>Dec 22 14:59 Paris, Madrid</StartDateTime>
+		<StartTestTime>1608645563</StartTestTime>
+		<TestList/>
+		<EndDateTime>Dec 22 14:59 Paris, Madrid</EndDateTime>
+		<EndTestTime>1608645563</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

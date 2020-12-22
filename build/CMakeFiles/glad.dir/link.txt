@@ -1,0 +1,3 @@
+C:\CMake\bin\cmake.exe -E rm -f CMakeFiles\glad.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\glad.dir/objects.a @CMakeFiles\glad.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g -shared -o bin\libglad.dll -Wl,--out-implib,lib\libglad.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\glad.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\glad.dir\linklibs.rsp

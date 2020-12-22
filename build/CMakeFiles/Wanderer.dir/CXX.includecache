@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../objImporter/include/objImporter/objImporter.hpp
+iostream
+-
+fstream
+-
+filesystem
+-
+
+D:/UserData/Documents/vscode-workspace/Wanderer/main.cpp
+iostream
+-
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+objImporter/objImporter.hpp
+D:/UserData/Documents/vscode-workspace/Wanderer/objImporter/objImporter.hpp
+

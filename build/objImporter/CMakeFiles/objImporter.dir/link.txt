@@ -1,0 +1,3 @@
+C:\CMake\bin\cmake.exe -E rm -f CMakeFiles\objImporter.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\objImporter.dir/objects.a @CMakeFiles\objImporter.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g -shared -o ..\bin\libobjImporter-d.dll -Wl,--out-implib,..\lib\libobjImporter-d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\objImporter.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\objImporter.dir\linklibs.rsp

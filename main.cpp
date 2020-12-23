@@ -7,9 +7,12 @@
 using namespace std;
 void processInputs(GLFWwindow* window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
 double lastXPos = -1.0f;
 float angle_ = -1.0f;
+float FOV = 90.0f;
+
 
 int main(void){
     cout << "MAIN::main()" << endl;
@@ -21,7 +24,7 @@ int main(void){
     Shader shader3D;
     string title = "Wanderer", build = "build_0.1 dev";
     int SCR_WIDTH = 1280, SCR_HEIGHT = 720, fpsCap = 60;
-    float deltaTime = 0.0f, lastFrame = 0.0f, currentFrame = 0.0f, FOV = 120.0f;
+    float deltaTime = 0.0f, lastFrame = 0.0f, currentFrame = 0.0f;
 
     //**Initiate glfw
     glfwInit();
@@ -49,19 +52,20 @@ int main(void){
     //**Setting the callBacks
     //glfwSetKeyCallback(window, key_callback);
     //glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetScrollCallback(window, scroll_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
 
     //**Initiate 3D shader
     shader3D = Shader("./resources/shader/vShaderSource.vs", "resources/shader/fShaderSource.fs");
-    vec3 position = vec3(-3.0f, 2.0f, 3.0f);
+    vec3 position = vec3(-3.0f, 2.0f, -3.0f);
     vec3 up = vec3(0.0f, 1.0f, 0.0f);
-    vec3 front = vec3(1.0f, 0.0f, -1.0f);
+    vec3 front = vec3(1.0f, -0.5f, -1.0f);
     shader3D.use();
     shader3D.setVec3("objectColor", vec3(1.0f, 0.5f, 0.31f));
     shader3D.setVec3("lightColor", vec3(1.0f, 1.0f, 1.0f));
-    shader3D.setVec3("lightPos", vec3(25.0f, 50.0f, 25.0f));
-    shader3D.setMat4("projection", perspective(radians(FOV), (float)SCR_WIDTH/SCR_HEIGHT, 0.1f, 10000.0f));
-    shader3D.setMat4("model", mat4(1.0f));
+    shader3D.setVec3("lightPos", vec3(-25.0f, 50.0f, -25.0f));
+    //shader3D.setMat4("projection", perspective(radians(FOV), (float)SCR_WIDTH/SCR_HEIGHT, 0.1f, 10000.0f));
+    //shader3D.setMat4("model", mat4(1.0f));
 
     GLuint VBO, VAO;
     glGenVertexArrays(1, &VAO);
@@ -93,9 +97,10 @@ int main(void){
 
         //**Setting shader's uniform
         shader3D.use();
-        shader3D.setVec3("frontView", front);
-        shader3D.setMat4("view", lookAt(position, position + front, up));
+        shader3D.setVec3("frontView", vec3(0.0f) - position);
+        shader3D.setMat4("view", lookAt(position, vec3(0.0f) - position, up));
         shader3D.setVec3("viewPos", position);
+        shader3D.setMat4("projection", perspective(radians(FOV), (float)SCR_WIDTH/SCR_HEIGHT, 0.1f, 10000.0f));
         shader3D.setMat4("model", 
             glm::scale(glm::rotate(glm::mat4(1.0f), glm::radians(angle_), glm::vec3(0.0, 1.0, 0.0)), glm::vec3(0.5, 0.5, 0.5))
         );
@@ -132,6 +137,16 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
             lastXPos = xpos;
         }
     }else{
+        lastXPos = -1.0f;
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
     }
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    FOV -= (float)yoffset*1.5f;
+    if (FOV < 1.0f)
+        FOV = 1.0f;
+    if (FOV > 120.0f)
+        FOV = 120.0f; 
 }

@@ -71,6 +71,17 @@ void ObjImporter::extract(string path){
 
     //**Simple debug prompt of the Data vector
     cout << "Data size = " << Data.size() << endl;
+    int index = 0;
+    for(int i = 0 ; i < Data.size() ; i++){
+        cout << Data[i] << " ";
+        if(index == 2)
+            cout << "\t";
+        if(index == 5){
+            cout << endl;
+            index = -1;
+        }
+        index++;
+    }
     file.close();
 }
 
